@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#ffff"/>
+    <size android:width="10dp" android:height="10dp"/>
+    <corners android:radius="5dp"/>
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M 5,0 L 10,5 L 5,10 L 0,5 Z"/>
+</shape>

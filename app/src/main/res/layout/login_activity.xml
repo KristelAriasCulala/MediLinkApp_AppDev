@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#FFFF"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Logo -->
+
+    <!-- Welcome Text -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="261dp"
+        android:layout_height="254dp"
+        android:layout_gravity="center"
+        android:contentDescription="Medlink Logo"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Welcome to Medilink"
+        android:textColor="#0648b3"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Email Input -->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/emailInput"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Email or Username"
+        android:background="@drawable/input_bg"
+        android:paddingStart="40dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp" />
+
+    <!-- Password Input -->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/passwordInput"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Password"
+        android:background="@drawable/input_bg"
+        android:paddingStart="40dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp" />
+
+    <!-- Remember Me & Forgot Password -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/rememberMe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Remember Me"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:padding="16dp" />
+
+        <TextView
+            android:id="@+id/forgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot your Password?"
+            android:textColor="#0648b3"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_gravity="end" />
+    </LinearLayout>
+
+    <!-- Login Button -->
+    <RelativeLayout
+        android:id="@+id/loginButton"
+        android:layout_width="311dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description">
+
+        <TextView
+            android:id="@+id/loginButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Login"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+    <!-- Other Accounts -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Other accounts"
+        android:textSize="12sp"
+        android:textColor="#777"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center" />
+
+    <!-- Social Media Icons -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:id="@+id/googleLogin"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/google"
+            android:layout_marginEnd="15dp"
+            android:contentDescription="Google Login" />
+
+        <ImageView
+            android:id="@+id/facebookLogin"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="Facebook Login"
+            android:src="@drawable/facebook" />
+    </LinearLayout>
+
+    <!-- Sign Up -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="Didn't have an Account? Sign Up"
+        android:textColor="#0648b3"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
