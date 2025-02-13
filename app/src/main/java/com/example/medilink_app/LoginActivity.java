@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,7 +16,6 @@ public class LoginActivity extends AppCompatActivity {
     RelativeLayout loginButton;
     CheckBox rememberMe;
     TextView forgotPassword;
-    ImageView googleLogin, facebookLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +28,6 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.loginButton);
         rememberMe = findViewById(R.id.rememberMe);
         forgotPassword = findViewById(R.id.forgotPassword);
-        googleLogin = findViewById(R.id.googleLogin);
-        facebookLogin = findViewById(R.id.facebookLogin);
 
         // Login Button Click
         TextView loginButtonText = findViewById(R.id.loginButtonText);
@@ -51,12 +47,5 @@ public class LoginActivity extends AppCompatActivity {
         // Forgot Password Click
         forgotPassword.setOnClickListener(v ->
                 Toast.makeText(LoginActivity.this, "Forgot Password Clicked", Toast.LENGTH_SHORT).show());
-
-        // Social Login Clicks
-        googleLogin.setOnClickListener(v ->
-                Toast.makeText(LoginActivity.this, "Google Login Clicked", Toast.LENGTH_SHORT).show());
-
-        facebookLogin.setOnClickListener(v ->
-                Toast.makeText(LoginActivity.this, "Facebook Login Clicked", Toast.LENGTH_SHORT).show());
     }
 }
