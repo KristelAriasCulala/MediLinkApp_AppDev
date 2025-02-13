@@ -24,6 +24,8 @@
         <activity android:name=".LoginActivity"
             android:theme="@style/Theme.MediLink_App.NoActionBar">
         </activity>
+        <activity android:name=".SignUpActivity"
+            android:theme="@style/Theme.MediLink_App.NoActionBar" />
     </application>
 
 </manifest>

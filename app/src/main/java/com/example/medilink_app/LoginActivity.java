@@ -28,7 +28,10 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.loginButton);
         rememberMe = findViewById(R.id.rememberMe);
         forgotPassword = findViewById(R.id.forgotPassword);
-
+// Sign Up Link Click
+        TextView signUpLink = findViewById(R.id.signUpLink);
+        signUpLink.setOnClickListener(v ->
+                startActivity(new Intent(LoginActivity.this, SignUpActivity.class)));
         // Login Button Click
         TextView loginButtonText = findViewById(R.id.loginButtonText);
         loginButtonText.setOnClickListener(v -> {
