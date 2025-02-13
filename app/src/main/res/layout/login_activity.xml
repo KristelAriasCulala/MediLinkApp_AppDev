@@ -20,20 +20,32 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="413dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
 
+            <!-- Card Header Image -->
+            <ImageView
+                android:id="@+id/cardHeader"
+                android:layout_width="1000dp"
+                android:layout_height="215dp"
+                android:layout_gravity="center"
+                android:contentDescription="Card Header"
+                android:layout_marginTop="-103dp"
+                android:src="@drawable/cardheader" />
+
             <!-- Logo -->
+
+            <!-- Welcome Text -->
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="319dp"
                 android:layout_height="161dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="-100dp"
                 android:contentDescription="Medlink Logo"
                 android:src="@drawable/logo" />
 
-            <!-- Welcome Text -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
