@@ -42,10 +42,13 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(LoginActivity.this, "Logging in...", Toast.LENGTH_SHORT).show();
-                // Navigate to Home Screen (Replace with actual home activity)
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                // Navigate to HomeActivity after login
+                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish(); // This will close the LoginActivity
             }
         });
+
 
         // Forgot Password Click
         forgotPassword.setOnClickListener(v ->
