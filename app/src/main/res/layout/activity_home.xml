@@ -78,63 +78,70 @@
             app:layout_constraintBottom_toTopOf="@id/guideline4" />
 
         <!-- Search Bar -->
+
+        <!-- Explore Section -->
+
+        <!-- Services -->
+
         <EditText
             android:id="@+id/search_bar"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:hint="🔍 Search"
             android:background="@drawable/rounded_search_bg"
+            android:hint="🔍 Search"
             android:padding="10dp"
             android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/home_title"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/guideline7"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/guideline7" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_title"
+            app:layout_constraintVertical_bias="0.782" />
 
-        <!-- Explore Section -->
         <LinearLayout
             android:id="@+id/explore_section"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/rounded_explore_bg"
             android:orientation="vertical"
             android:padding="12dp"
-            android:background="@drawable/rounded_explore_bg"
-            app:layout_constraintTop_toBottomOf="@id/search_bar"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/guideline8"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/guideline8">
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_bar"
+            app:layout_constraintVertical_bias="1.0">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Explore Latest"
-                android:textSize="18sp"
                 android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Find the best medicines &amp; deals"
-                android:textSize="14sp"
-                android:textColor="#888888"/>
+                android:textColor="#888888"
+                android:textSize="14sp" />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="117dp"
                 android:layout_height="wrap_content"
-                android:text="Explore"
                 android:background="@drawable/rounded_button_black"
-                android:textColor="#FFFFFF"
-                android:padding="6dp"/>
+                android:padding="6dp"
+                android:text="Explore"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
-        <!-- Services -->
         <TextView
-            android:id="@+id/service_title"
+            android:id="@+id/service_title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Services"
+            android:layout_marginStart="8dp"
+            android:text="Welcome to MediLinkX !"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -143,10 +150,37 @@
             app:layout_constraintTop_toBottomOf="@id/explore_section"
             app:layout_constraintVertical_bias="0.081" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Your Pharmacy Application"
+            android:textColor="#888888"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/guideline9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/explore_section"
+            app:layout_constraintVertical_bias="0.191" />
+
+        <TextView
+            android:id="@+id/service_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Services"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/guideline9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/explore_section"
+            app:layout_constraintVertical_bias="0.356" />
+
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-15dp"
+            android:layout_marginTop="-20dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@id/guideline10"
@@ -183,11 +217,13 @@
         </LinearLayout>
 
 
+        <!-- Bottom Navigation Bar -->
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="124dp"
             android:layout_height="117dp"
-            android:layout_marginTop="344dp"
+            android:layout_marginTop="452dp"
             android:src="@drawable/imageone"
             app:layout_constraintEnd_toStartOf="@+id/imageView2"
             app:layout_constraintHorizontal_bias="0.2"
@@ -198,13 +234,13 @@
             android:id="@+id/imageView2"
             android:layout_width="124dp"
             android:layout_height="117dp"
-            android:layout_marginTop="344dp"
+            android:layout_marginTop="452dp"
             android:src="@drawable/imagetwo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="parent" />
-        <!-- Bottom Navigation Bar -->
+
         <LinearLayout
             android:id="@+id/bottom_nav"
             android:layout_width="match_parent"
@@ -219,25 +255,19 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:src="@drawable/home_agreement" />
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="35dp"
-                android:layout_weight="1"
-                android:src="@drawable/search_analytics" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:src="@drawable/shopping_icon" />
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:src="@drawable/setting_bulb" />
 
