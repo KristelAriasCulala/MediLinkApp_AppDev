@@ -27,7 +27,10 @@
         <activity android:name=".SignUpActivity"
             android:theme="@style/Theme.MediLink_App.NoActionBar" />
 <!--        Home-->
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity"
+            android:theme="@style/Theme.MediLink_App.NoActionBar"
+            />
+
 
     </application>
 
