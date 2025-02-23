@@ -110,7 +110,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_bar"
-            app:layout_constraintVertical_bias="0.8">
+            app:layout_constraintVertical_bias="1.0">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -255,25 +255,19 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:src="@drawable/home_agreement" />
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="35dp"
-                android:layout_weight="1"
-                android:src="@drawable/search_analytics" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:src="@drawable/shopping_icon" />
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:src="@drawable/setting_bulb" />
 
