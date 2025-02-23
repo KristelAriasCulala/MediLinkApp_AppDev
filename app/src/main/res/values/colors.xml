@@ -7,4 +7,6 @@
         <color name="white">#FFFFFF</color>
 
     <!-- Add other color definitions here -->
+    <color name="button_color">#000000</color> <!-- Black -->
+
 </resources>
