@@ -12,6 +12,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- Vertical Guideline for Centering -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <!-- Horizontal Guideline for Top Margin -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
+
         <ImageView
             android:id="@+id/logoImageView"
             android:layout_width="0dp"
@@ -84,8 +100,8 @@
 
         <RelativeLayout
             android:id="@+id/getStartedButtonLayout"
-            android:layout_width="0dp"
-            android:layout_height="51dp"
+            android:layout_width="299dp"
+            android:layout_height="46dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/button_background"
             app:layout_constraintEnd_toEndOf="parent"
@@ -97,8 +113,8 @@
                 android:id="@+id/arrowImageView"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_centerVertical="true"
                 android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
                 android:layout_marginStart="0dp"
                 android:padding="5dp"
                 android:src="@drawable/arrow_with_circle" />
@@ -107,12 +123,12 @@
                 android:id="@+id/getStartedText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
                 android:layout_marginEnd="20dp"
                 android:text="Get Started"
                 android:textColor="@android:color/white"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
         </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
