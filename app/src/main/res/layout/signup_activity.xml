@@ -18,146 +18,151 @@
         app:cardCornerRadius="20dp"
         app:cardElevation="8dp">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="466dp"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <!-- Card Header Image -->
-            <ImageView
-                android:id="@+id/cardHeader"
-                android:layout_width="1000dp"
-                android:layout_height="215dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="-105dp"
-                android:contentDescription="Card Header"
-                android:src="@drawable/cardheader" />
-
-            <!-- Logo -->
-            <ImageView
-                android:id="@+id/logo"
-                android:layout_width="319dp"
-                android:layout_height="161dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="-100dp"
-                android:contentDescription="Medlink Logo"
-                android:src="@drawable/logo" />
-
-            <!-- Welcome Text -->
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-50dp"
-                android:layout_marginTop="-10dp"
-                android:text="Create a New Account"
-                android:textColor="#0648b3"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <!-- Name Input -->
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/nameInput"
-                android:layout_width="263dp"
-                android:layout_height="34dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/input_bg_rounded"
-                android:hint="Full Name"
-                android:paddingStart="20dp"
-                android:textColor="#000000"
-                android:textColorHint="#808080"
-                android:textSize="14sp" />
+                <!-- Card Header Image -->
+                <ImageView
+                    android:id="@+id/cardHeader"
+                    android:layout_width="1000dp"
+                    android:layout_height="215dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-105dp"
+                    android:contentDescription="Card Header"
+                    android:src="@drawable/cardheader" />
 
-            <!-- Email Input -->
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/emailInput"
-                android:layout_width="263dp"
-                android:layout_height="34dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/input_bg_rounded"
-                android:hint="Email or Username"
-                android:paddingStart="20dp"
-                android:textColor="#000000"
-                android:textColorHint="#808080"
-                android:textSize="14sp" />
+                <!-- Logo -->
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="319dp"
+                    android:layout_height="161dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-100dp"
+                    android:contentDescription="Medlink Logo"
+                    android:src="@drawable/logo" />
 
-            <!-- Password Input -->
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/passwordInput"
-                android:layout_width="265dp"
-                android:layout_height="34dp"
-                android:background="@drawable/input_bg_rounded"
-                android:hint="Password"
-                android:paddingStart="20dp"
-                android:textColor="#000000"
-                android:textColorHint="#808080"
-                android:textSize="14sp" />
-
-            <!-- Confirm Password Input -->
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/confirmPasswordInput"
-                android:layout_width="265dp"
-                android:layout_height="34dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/input_bg_rounded"
-                android:hint="Confirm Password"
-                android:paddingStart="20dp"
-                android:textColor="#000000"
-                android:textColorHint="#808080"
-                android:textSize="14sp" />
-
-            <!-- Sign Up Button -->
-            <RelativeLayout
-                android:id="@+id/signupButton"
-                android:layout_width="253dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/button_background"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/description">
-
+                <!-- Welcome Text -->
                 <TextView
-                    android:id="@+id/signupButtonText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="Sign Up"
-                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="-50dp"
+                    android:layout_marginTop="-10dp"
+                    android:text="Create a New Account"
+                    android:textColor="#0648b3"
                     android:textSize="15sp"
                     android:textStyle="bold" />
-            </RelativeLayout>
 
-            <!-- Login Link -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="16dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/alreadyAccountText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Already have an Account? "
+                <!-- Name Input -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/nameInput"
+                    android:layout_width="263dp"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_bg_rounded"
+                    android:hint="Full Name"
+                    android:paddingStart="20dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
+                    android:textColorHint="#808080"
+                    android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/loginLink"
+                <!-- Email Input -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/emailInput"
+                    android:layout_width="263dp"
+                    android:layout_height="34dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_bg_rounded"
+                    android:hint="Email or Username"
+                    android:paddingStart="20dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#808080"
+                    android:textSize="14sp" />
+
+                <!-- Password Input -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/passwordInput"
+                    android:layout_width="265dp"
+                    android:layout_height="34dp"
+                    android:background="@drawable/input_bg_rounded"
+                    android:hint="Password"
+                    android:paddingStart="20dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#808080"
+                    android:textSize="14sp" />
+
+                <!-- Confirm Password Input -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/confirmPasswordInput"
+                    android:layout_width="265dp"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/input_bg_rounded"
+                    android:hint="Confirm Password"
+                    android:paddingStart="20dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#808080"
+                    android:textSize="14sp" />
+
+                <!-- Sign Up Button -->
+                <RelativeLayout
+                    android:id="@+id/signupButton"
+                    android:layout_width="253dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/button_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/description">
+
+                    <TextView
+                        android:id="@+id/signupButtonText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Sign Up"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <!-- Login Link -->
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Login"
-                    android:textColor="#0648b3"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
 
-        </LinearLayout>
+                    <TextView
+                        android:id="@+id/alreadyAccountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Already have an Account? "
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/loginLink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Login"
+                        android:textColor="#0648b3"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>
