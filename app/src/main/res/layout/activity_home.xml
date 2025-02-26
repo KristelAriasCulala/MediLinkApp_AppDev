@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="632dp" />
+            app:layout_constraintGuide_begin="574dp" />
 
         <!-- Search Bar -->
         <EditText
@@ -159,6 +159,7 @@
             app:layout_constraintVertical_bias="0.356" />
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="-20dp"
@@ -214,27 +215,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/service_title" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="124dp"
-            android:layout_height="117dp"
-            android:layout_marginTop="420dp"
-            android:src="@drawable/imageone"
-            app:layout_constraintEnd_toStartOf="@+id/imageView2"
-            app:layout_constraintHorizontal_bias="0.2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="124dp"
-            android:layout_height="117dp"
-            android:layout_marginTop="420dp"
-            android:src="@drawable/imagetwo"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/imageCarousel"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="72dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.8"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/service_title" />
 
         <LinearLayout
             android:id="@+id/bottom_nav"
