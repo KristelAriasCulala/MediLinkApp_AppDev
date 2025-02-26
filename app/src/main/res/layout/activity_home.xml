@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="95dp" />
+            app:layout_constraintGuide_begin="79dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline8"
@@ -173,25 +173,25 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:src="@drawable/image_3" />
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:src="@drawable/image_4" />
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:src="@drawable/image_5" />
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:src="@drawable/image_6" />
 
@@ -206,7 +206,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="48dp"
             android:text="Products"
             android:textColor="@color/black"
             android:textSize="18sp"
