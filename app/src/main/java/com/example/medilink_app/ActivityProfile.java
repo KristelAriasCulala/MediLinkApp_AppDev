@@ -14,16 +14,28 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.model.GradientColor;
 import java.util.ArrayList;
 import java.util.List;
-
+import androidx.drawerlayout.widget.DrawerLayout;
 public class ActivityProfile extends AppCompatActivity {
-
+    private DrawerLayout drawerLayout;
+    private ImageView profileImage;
     private BarChart barChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        drawerLayout = findViewById(R.id.drawer_layout);
+        profileImage = findViewById(R.id.profile_image);
+
+        profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(findViewById(R.id.navigation_view));
+            }
+        });
         // Find the views by ID
         ImageView shoppingIcon = findViewById(R.id.shopping_icon);
         ImageView homeIcon = findViewById(R.id.home_icon);
