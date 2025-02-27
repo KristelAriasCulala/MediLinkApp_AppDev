@@ -1,67 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:padding="16dp">
-
-        <!-- Guidelines -->
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="40px" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="20px" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="370dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="95dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="236dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="547dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="652dp" />
 
         <!-- Search Bar -->
         <EditText
@@ -76,10 +25,9 @@
             android:textSize="16sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.0" />
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- Products Text -->
+        <!-- Products Header -->
         <TextView
             android:id="@+id/products_text"
             android:layout_width="wrap_content"
@@ -93,17 +41,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_bar" />
 
-        <!-- Image Views -->
+        <!-- First Row -->
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView1"
             android:layout_width="124dp"
             android:layout_height="117dp"
             android:layout_marginTop="10dp"
             android:src="@drawable/imageone"
             app:layout_constraintEnd_toStartOf="@+id/imageView2"
-            app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/products_text" />
+
+        <TextView
+            android:id="@+id/product_name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:text="Paracetamol Biogesic"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/imageView1"
+            app:layout_constraintStart_toStartOf="@id/imageView1"
+            app:layout_constraintEnd_toEndOf="@id/imageView1" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -112,11 +72,117 @@
             android:layout_marginTop="10dp"
             android:src="@drawable/imagetwo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.8"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/imageView1"
             app:layout_constraintTop_toBottomOf="@id/products_text" />
 
-        <!-- Bottom Navigation Bar -->
+        <TextView
+            android:id="@+id/product_name2"
+            android:layout_width="140dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:text="Phenylephrine HCI\nChlorphenamine Maleate Paracetamol"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/imageView2"
+            app:layout_constraintStart_toStartOf="@id/imageView2"
+            app:layout_constraintEnd_toEndOf="@id/imageView2" />
+
+        <!-- Second Row -->
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="124dp"
+            android:layout_height="117dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/imagethree"
+            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/product_name1" />
+
+        <TextView
+            android:id="@+id/product_name3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:text="Ibuprofen Medicol"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/imageView3"
+            app:layout_constraintStart_toStartOf="@id/imageView3"
+            app:layout_constraintEnd_toEndOf="@id/imageView3" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="124dp"
+            android:layout_height="109dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/imagefour"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@id/product_name2" />
+
+        <TextView
+            android:id="@+id/product_name4"
+            android:layout_width="136dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:text="Cetirizine HCI"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/imageView4"
+            app:layout_constraintStart_toStartOf="@id/imageView4"
+            app:layout_constraintTop_toBottomOf="@id/imageView4" />
+
+        <!-- Third Row -->
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="124dp"
+            android:layout_height="117dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/imagefive"
+            app:layout_constraintEnd_toStartOf="@+id/imageView6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/product_name3" />
+
+        <TextView
+            android:id="@+id/product_name5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:text="Loratadine"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/imageView5"
+            app:layout_constraintStart_toStartOf="@id/imageView5"
+            app:layout_constraintEnd_toEndOf="@id/imageView5" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="124dp"
+            android:layout_height="117dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/imagesix"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@id/product_name4" />
+
+        <TextView
+            android:id="@+id/product_name6"
+            android:layout_width="136dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:text="Guardium"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/imageView6"
+            app:layout_constraintStart_toStartOf="@id/imageView6"
+            app:layout_constraintTop_toBottomOf="@id/imageView6" />
+
+        <!-- Bottom Navigation -->
         <LinearLayout
             android:id="@+id/bottom_nav"
             android:layout_width="match_parent"
@@ -126,9 +192,7 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline10"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <ImageView
                 android:id="@+id/home_icon"
@@ -136,7 +200,7 @@
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:src="@drawable/home_agreement"
-                android:onClick="goToHome"/>
+                android:onClick="goToHome" />
 
             <ImageView
                 android:id="@+id/shopping_icon"
@@ -155,7 +219,6 @@
                 android:src="@drawable/profile_candidate"
                 android:clickable="true"
                 android:focusable="true" />
-
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
