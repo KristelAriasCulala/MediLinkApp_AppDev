@@ -33,6 +33,9 @@
         <activity android:name=".ActivityProduct"
             android:theme="@style/Theme.MediLink_App.NoActionBar"
             />
+        <activity android:name=".ActivityProfile"
+            android:theme="@style/Theme.MediLink_App.NoActionBar"
+            />
 
 
     </application>
