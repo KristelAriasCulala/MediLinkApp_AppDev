@@ -19,14 +19,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="40px" />
+            app:layout_constraintGuide_begin="40dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="20px" />
+            app:layout_constraintGuide_begin="20dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline6"
@@ -112,7 +112,7 @@
                 android:layout_width="117dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_button_black"
-                android:padding="6dp"
+                android:padding="2dp"
                 android:text="Explore"
                 android:textColor="#FFFFFF" />
 
@@ -218,7 +218,7 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/imageCarousel"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:layout_marginTop="72dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -236,9 +236,9 @@
             android:padding="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/guideline10"
-            app:layout_constraintVertical_bias="0.9">
+            app:layout_constraintVertical_bias="1.0">
 
-            <ImageView
+        <ImageView
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
@@ -254,10 +254,13 @@
                 android:focusable="true" />
 
             <ImageView
+                android:id="@+id/profileIcon"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:src="@drawable/setting_bulb" />
+                android:src="@drawable/profile_candidate"
+                android:clickable="true"
+                android:focusable="true" />
 
         </LinearLayout>
 

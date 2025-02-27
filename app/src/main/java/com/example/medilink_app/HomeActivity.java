@@ -23,6 +23,8 @@ public class HomeActivity extends AppCompatActivity {
         // Initialize shoppingIcon AFTER setContentView
         shoppingIcon = findViewById(R.id.shopping_icon);
         imageCarousel = findViewById(R.id.imageCarousel); // Initialize ViewPager2
+        ImageView profileIcon = findViewById(R.id.profileIcon);
+
 
         // Set the OnClickListener for shopping icon
         shoppingIcon.setOnClickListener(new View.OnClickListener() {
@@ -34,9 +36,18 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        profileIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, ActivityProfile.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
         // List of image resources for carousel
         List<Integer> images = Arrays.asList(
-                R.drawable.imageone,
+                R.drawable.pills,
                 R.drawable.imagetwo
         );
 
