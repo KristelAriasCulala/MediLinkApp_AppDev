@@ -1,9 +1,12 @@
 package com.example.medilink_app;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +27,13 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        Button exploreButton = findViewById(R.id.explore_button);
+
+        // Set background color programmatically
+        exploreButton.getBackground().setTintList(null); // Remove any applied tint
+        exploreButton.setBackgroundTintList(ColorStateList.valueOf(Color.BLACK));
+
+        exploreButton.setBackgroundResource(R.drawable.rounded_button_black);
 
         // Initialize ViewPager2
         imageCarousel = findViewById(R.id.imageCarousel);
