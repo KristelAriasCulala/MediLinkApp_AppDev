@@ -1,13 +1,20 @@
 package com.example.medilink_app;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.app.AlertDialog;
+import android.widget.TextView;
+
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -27,7 +34,13 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         Button exploreButton = findViewById(R.id.explore_button);
+
+        exploreButton.setOnClickListener(v -> {
+            // Show modal (AlertDialog)
+            showModal();
+        });
 
         // Set background color programmatically
         exploreButton.getBackground().setTintList(null); // Remove any applied tint
@@ -69,5 +82,31 @@ public class HomeActivity extends AppCompatActivity {
             drawerLayout.closeDrawer(Gravity.START); // Close Drawer after click
             return true;
         });
+    }
+    private void showModal() {
+        // Create Dialog
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        bottomSheetDialog.setContentView(R.layout.custom_dialog);
+
+        // Find dialog elements
+        ImageView closeDialog = bottomSheetDialog.findViewById(R.id.close_dialog);
+        Button okButton = bottomSheetDialog.findViewById(R.id.ok_button);
+        TextView learnMore = bottomSheetDialog.findViewById(R.id.learn_more);
+
+        // Close button functionality
+        closeDialog.setOnClickListener(v -> bottomSheetDialog.dismiss());
+
+        // OK button functionality
+        okButton.setOnClickListener(v -> bottomSheetDialog.dismiss());
+
+        // Learn more functionality (you can open a new activity or URL)
+        learnMore.setOnClickListener(v -> {
+            // Example: Open a webpage
+            // Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://yourwebsite.com"));
+            // startActivity(intent);
+        });
+
+        // Show bottom sheet
+        bottomSheetDialog.show();
     }
 }
