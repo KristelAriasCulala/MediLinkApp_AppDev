@@ -64,7 +64,7 @@ public class ActivityProfile extends AppCompatActivity {
         entries.add(new BarEntry(5f, 190.2f)); // Saturday
         entries.add(new BarEntry(6f, 200.0f)); // Sunday
 
-        BarDataSet dataSet = new BarDataSet(entries, "Calories Burned");
+        BarDataSet dataSet = new BarDataSet(entries, "Products");
         dataSet.setValueTextSize(12f);
 
         // Apply Gradient Colors

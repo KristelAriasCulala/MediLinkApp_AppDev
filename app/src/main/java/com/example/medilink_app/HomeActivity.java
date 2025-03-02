@@ -33,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_home);
 
         Button exploreButton = findViewById(R.id.explore_button);
@@ -60,8 +61,9 @@ public class HomeActivity extends AppCompatActivity {
 
         // Set up image list for the carousel
         List<Integer> images = Arrays.asList(
-                R.drawable.imageone,
-                R.drawable.imagetwo
+                R.drawable.carousel1,
+                R.drawable.carousel2,
+                R.drawable.carousel3
         );
 
         // Set up the adapter
@@ -87,6 +89,7 @@ public class HomeActivity extends AppCompatActivity {
         // Create Dialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         bottomSheetDialog.setContentView(R.layout.custom_dialog);
+        bottomSheetDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         // Find dialog elements
         ImageView closeDialog = bottomSheetDialog.findViewById(R.id.close_dialog);
