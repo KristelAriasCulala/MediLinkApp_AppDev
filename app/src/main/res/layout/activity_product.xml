@@ -213,11 +213,12 @@
 </ScrollView>
 
 <com.google.android.material.navigation.NavigationView
-android:id="@+id/nav_view"
-android:layout_width="280dp"
-android:layout_height="match_parent"
-android:layout_gravity="start"
-app:headerLayout="@layout/nav_header"
-app:menu="@menu/drawer_menu"/>
+    android:id="@+id/nav_view"
+    android:layout_width="280dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="@drawable/bg_gradient_blue"
+    app:headerLayout="@layout/nav_header"
+    app:menu="@menu/drawer_menu"/>
 
     </androidx.drawerlayout.widget.DrawerLayout>
