@@ -2,9 +2,11 @@ package com.example.medilink_app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -12,9 +14,10 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.model.GradientColor;
+import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.List;
-import androidx.drawerlayout.widget.DrawerLayout;
+
 public class ActivityProfile extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ImageView profileImage;
@@ -22,41 +25,33 @@ public class ActivityProfile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         profileImage = findViewById(R.id.profile_image);
-
-        profileImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawerLayout.openDrawer(findViewById(R.id.navigation_view));
-            }
-        });
-        // Find the views by ID
-        ImageView shoppingIcon = findViewById(R.id.shopping_icon);
-        ImageView homeIcon = findViewById(R.id.home_icon);
         barChart = findViewById(R.id.barChart);
+
+        // Open drawer when profile image is clicked
+        profileImage.setOnClickListener(v -> drawerLayout.openDrawer(Gravity.START));
+
+        // Handle Navigation Drawer Item Clicks
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(menuItem -> {
+            int id = menuItem.getItemId();
+            if (id == R.id.nav_home) {
+                startActivity(new Intent(ActivityProfile.this, HomeActivity.class));
+            } else if (id == R.id.nav_profile) {
+                startActivity(new Intent(ActivityProfile.this, ActivityProfile.class));
+            } else if (id == R.id.nav_product) {
+                startActivity(new Intent(ActivityProfile.this, ActivityProduct.class));
+            }
+            drawerLayout.closeDrawer(Gravity.START); // Close drawer after click
+            return true;
+        });
 
         // Initialize Bar Chart
         setupBarChart();
-
-        // Set OnClickListener for the shopping icon
-        shoppingIcon.setOnClickListener(v -> {
-            Intent intent = new Intent(ActivityProfile.this, ActivityProduct.class);
-            startActivity(intent);
-            overridePendingTransition(0, 0);
-        });
-
-        // Set OnClickListener for the home icon
-        homeIcon.setOnClickListener(v -> {
-            Intent intent = new Intent(ActivityProfile.this, HomeActivity.class);
-            startActivity(intent);
-            overridePendingTransition(0, 0);
-        });
     }
 
     private void setupBarChart() {

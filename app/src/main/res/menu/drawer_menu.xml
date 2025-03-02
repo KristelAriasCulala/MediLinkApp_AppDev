@@ -8,8 +8,8 @@
 
     <item
         android:id="@+id/nav_profile"
-        android:icon="@drawable/profile_candidate"
-        android:title="Profile" />
+        android:icon="@drawable/graph_bars_icon"
+        android:title="Statistics" />
 
     <item
         android:id="@+id/nav_settings"
@@ -18,7 +18,7 @@
 
     <item
         android:id="@+id/nav_product"
-        android:icon="@drawable/profile_candidate"
+        android:icon="@drawable/shopping_icon"
         android:title="Product" />
 
 </menu>
