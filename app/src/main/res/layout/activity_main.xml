@@ -100,14 +100,14 @@
 
         <RelativeLayout
             android:id="@+id/getStartedButtonLayout"
-            android:layout_width="299dp"
+            android:layout_width="0dp"
             android:layout_height="46dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/button_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/description"
-            app:layout_constraintWidth_percent="0.8">
+            app:layout_constraintWidth_percent="0.85">
 
             <ImageView
                 android:id="@+id/arrowImageView"
@@ -117,7 +117,9 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="0dp"
                 android:padding="5dp"
-                android:src="@drawable/arrow_with_circle" />
+                android:src="@drawable/arrow_with_circle"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginEnd="20dp" />
 
             <TextView
                 android:id="@+id/getStartedText"
