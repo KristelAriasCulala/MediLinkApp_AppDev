@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.02872777" />
+        app:layout_constraintGuide_begin="20dp" />
 
     <!-- Card View for Content -->
     <androidx.cardview.widget.CardView
@@ -52,8 +52,8 @@
                     android:layout_width="1000dp"
                     android:layout_height="215dp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="-105dp"
                     android:contentDescription="Card Header"
-                    android:layout_marginTop="-103dp"
                     android:src="@drawable/cardheader" />
 
                 <!-- Logo -->
@@ -72,17 +72,30 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="-50dp"
                     android:layout_marginTop="-10dp"
-                    android:text="Welcome to MedilinkX"
+                    android:text="Create a New Account"
                     android:textColor="#0648b3"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <!-- Email Input -->
+                <!-- Name Input -->
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/usernameInput"
+                    android:id="@+id/nameInput"
                     android:layout_width="263dp"
                     android:layout_height="34dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_bg_rounded"
+                    android:hint="Full Name"
+                    android:paddingStart="20dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#808080"
+                    android:textSize="14sp" />
+
+                <!-- Email Input -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/emailInput"
+                    android:layout_width="263dp"
+                    android:layout_height="34dp"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/input_bg_rounded"
                     android:hint="Email or Username"
@@ -96,66 +109,49 @@
                     android:id="@+id/passwordInput"
                     android:layout_width="265dp"
                     android:layout_height="34dp"
-                    android:layout_marginTop="5dp"
                     android:background="@drawable/input_bg_rounded"
                     android:hint="Password"
                     android:paddingStart="20dp"
                     android:textColor="#000000"
                     android:textColorHint="#808080"
-                    android:textSize="14sp"
-                    android:inputType="textPassword" />
+                    android:textSize="14sp" />
 
-                <!-- Remember Me & Forgot Password -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                <!-- Confirm Password Input -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/confirmPasswordInput"
+                    android:layout_width="265dp"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/input_bg_rounded"
+                    android:hint="Confirm Password"
+                    android:paddingStart="20dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#808080"
+                    android:textSize="14sp" />
 
-                    <CheckBox
-                        android:id="@+id/rememberMe"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="16dp"
-                        android:text="Remember Me"
-                        android:textColor="#000"
-                        android:layout_marginLeft="-5dp"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:id="@+id/forgotPassword"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:text="Forgot your Password?"
-                        android:textColor="#0648b3"
-                        android:layout_marginLeft="-5dp"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <!-- Login Button -->
+                <!-- Sign Up Button -->
                 <RelativeLayout
-                    android:id="@+id/loginButton"
+                    android:id="@+id/signupButton"
                     android:layout_width="253dp"
                     android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/button_background"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/description">
 
                     <TextView
-                        android:id="@+id/loginButtonText"
+                        android:id="@+id/signupButtonText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="Login"
+                        android:text="Sign Up"
                         android:textColor="@android:color/white"
                         android:textSize="15sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
 
-                <!-- Sign Up -->
+                <!-- Login Link -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -165,19 +161,19 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/didntHaveAccountText"
+                        android:id="@+id/alreadyAccountText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Didn't have an Account? "
+                        android:text="Already have an Account? "
                         android:textColor="#000000"
                         android:textSize="13sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/signUpLink"
+                        android:id="@+id/loginLink"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sign Up"
+                        android:text="Login"
                         android:textColor="#0648b3"
                         android:textSize="13sp"
                         android:textStyle="bold" />
@@ -186,4 +182,5 @@
             </LinearLayout>
         </ScrollView>
     </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,61 +2,41 @@ package com.example.medilink_app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
-
-    EditText emailInput, passwordInput;
-    RelativeLayout loginButton;
-    CheckBox rememberMe;
-    TextView forgotPassword;
-    ImageView googleLogin, facebookLogin;
+    private static final String DEFAULT_USERNAME = "user@gmail.com";
+    private static final String DEFAULT_PASSWORD = "123";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-        // Initialize UI elements
-        emailInput = findViewById(R.id.emailInput);
-        passwordInput = findViewById(R.id.passwordInput);
-        loginButton = findViewById(R.id.loginButton);
-        rememberMe = findViewById(R.id.rememberMe);
-        forgotPassword = findViewById(R.id.forgotPassword);
-        googleLogin = findViewById(R.id.googleLogin);
-        facebookLogin = findViewById(R.id.facebookLogin);
+        EditText usernameInput = findViewById(R.id.usernameInput);
+        EditText passwordInput = findViewById(R.id.passwordInput);
+        RelativeLayout loginButton = findViewById(R.id.loginButton);
+        TextView signUpLink = findViewById(R.id.signUpLink);
 
-        // Login Button Click
-        TextView loginButtonText = findViewById(R.id.loginButtonText);
-        loginButtonText.setOnClickListener(v -> {
-            String email = emailInput.getText().toString();
+        loginButton.setOnClickListener(v -> {
+            String username = usernameInput.getText().toString();
             String password = passwordInput.getText().toString();
 
-            if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(LoginActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+            if (username.equals(DEFAULT_USERNAME) && password.equals(DEFAULT_PASSWORD)) {
+                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
             } else {
-                Toast.makeText(LoginActivity.this, "Logging in...", Toast.LENGTH_SHORT).show();
-                // Navigate to Home Screen (Replace with actual home activity)
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                Toast.makeText(LoginActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
             }
         });
 
-        // Forgot Password Click
-        forgotPassword.setOnClickListener(v ->
-                Toast.makeText(LoginActivity.this, "Forgot Password Clicked", Toast.LENGTH_SHORT).show());
-
-        // Social Login Clicks
-        googleLogin.setOnClickListener(v ->
-                Toast.makeText(LoginActivity.this, "Google Login Clicked", Toast.LENGTH_SHORT).show());
-
-        facebookLogin.setOnClickListener(v ->
-                Toast.makeText(LoginActivity.this, "Facebook Login Clicked", Toast.LENGTH_SHORT).show());
+        signUpLink.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+            startActivity(intent);
+        });
     }
 }

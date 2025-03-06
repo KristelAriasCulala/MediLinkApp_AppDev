@@ -3,6 +3,7 @@
     <style name="Base.Theme.MediLink_App" parent="Theme.MaterialComponents.DayNight.Bridge">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
     </style>
 
     <!-- Custom button style for dark theme -->
