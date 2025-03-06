@@ -94,7 +94,7 @@ public class HomeActivity extends AppCompatActivity {
 
         ImageView image4 = findViewById(R.id.image_4);
         image4.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, CustomerServiceActivity.class);
+            Intent intent = new Intent(HomeActivity.this, HealthAdvicesActivity.class);
             startActivity(intent);
         });
 

@@ -20,4 +20,13 @@
     <string name="your_email">Your Email</string>
     <string name="submit">Submit</string>
     <string name="your_message">Your Message</string>
+    <string name="health_tip_icon">Health Tip Icon</string>
+    <string name="tip_2_exercise_regularly">Tip 2: Exercise Regularly</string>
+    <string name="tip_1_stay_hydrated">Tip 1: Stay Hydrated</string>
+    <string name="drink_at_least_8_glasses_of_water_daily_to_maintain_good_health">Drink at least 8 glasses of water daily to maintain good health.</string>
+    <string name="share_tip">Share Tip</string>
+    <string name="engage_in_at_least_30_minutes_of_physical_activity_daily">Engage in at least 30 minutes of physical activity daily.</string>
+    <string name="tip_3_limit_unhealthy_foods_and_eat_healthy_meals">Tip 3: Limit Unhealthy Foods and Eat Healthy Meals</string>
+    <string name="do_not_forget_to_eat_breakfast_and_choose_a_nutritious_meal_with_more_protein_and_fiber_and_less_fat_sugar_and_calories">Do not forget to eat breakfast and choose a nutritious meal with more protein and fiber and less fat, sugar, and calories</string>
+    <string name="health_care_tips">Health Care Tips</string>
 </resources>
