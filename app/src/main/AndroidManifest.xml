@@ -39,6 +39,9 @@
         <activity android:name=".ScheduleActivity"
             android:theme="@style/Theme.MediLink_App.NoActionBar"
             />
+        <activity android:name=".EprescriptionActivity"
+            android:theme="@style/Theme.MediLink_App.NoActionBar"
+            />
 
     </application>
 

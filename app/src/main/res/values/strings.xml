@@ -4,4 +4,12 @@
     <string name="navigation_drawer_close">Close Drawer</string>
     <string name="opening_and_closing_times">Opening and Closing Times:</string>
     <string name="pharmacy_status">Pharmacy Status:</string>
+    <string name="e_prescription">E-Prescription</string>
+    <string name="patient_name">Patient Name</string>
+    <string name="patient_age">Patient Age</string>
+    <string name="doctor_name">Doctor Name</string>
+    <string name="prescribed_medicines">Prescribed Medicines</string>
+    <string name="save_prescription">Save Prescription</string>
+    <string name="print">Print</string>
+    <string name="back_navigation">Back</string>
 </resources>

@@ -91,6 +91,12 @@ public class HomeActivity extends AppCompatActivity {
             Intent intent = new Intent(HomeActivity.this, ScheduleActivity.class);
             startActivity(intent);
         });
+
+        ImageView image6 = findViewById(R.id.image_6);
+        image6.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, EprescriptionActivity.class);
+            startActivity(intent);
+        });
     }
     private void showModal() {
         // Create Dialog
