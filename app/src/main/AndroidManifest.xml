@@ -45,6 +45,9 @@
         <activity android:name=".CustomerServiceActivity"
             android:theme="@style/Theme.MediLink_App.NoActionBar"
             />
+        <activity android:name=".HealthAdvicesActivity"
+            android:theme="@style/Theme.MediLink_App.NoActionBar"
+            />
 
     </application>
 
