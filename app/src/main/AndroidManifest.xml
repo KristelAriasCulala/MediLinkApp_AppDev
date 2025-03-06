@@ -42,6 +42,9 @@
         <activity android:name=".EprescriptionActivity"
             android:theme="@style/Theme.MediLink_App.NoActionBar"
             />
+        <activity android:name=".CustomerServiceActivity"
+            android:theme="@style/Theme.MediLink_App.NoActionBar"
+            />
 
     </application>
 

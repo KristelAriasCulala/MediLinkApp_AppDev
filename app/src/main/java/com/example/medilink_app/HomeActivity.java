@@ -92,11 +92,25 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        ImageView image4 = findViewById(R.id.image_4);
+        image4.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, CustomerServiceActivity.class);
+            startActivity(intent);
+        });
+
+        ImageView image5 = findViewById(R.id.image_5);
+        image5.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, CustomerServiceActivity.class);
+            startActivity(intent);
+        });
+
         ImageView image6 = findViewById(R.id.image_6);
         image6.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, EprescriptionActivity.class);
             startActivity(intent);
         });
+
+
     }
     private void showModal() {
         // Create Dialog
