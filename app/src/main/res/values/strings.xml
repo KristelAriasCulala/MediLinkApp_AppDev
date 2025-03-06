@@ -2,4 +2,6 @@
     <string name="app_name">MediLink</string>
     <string name="navigation_drawer_open">Open Drawer</string>
     <string name="navigation_drawer_close">Close Drawer</string>
+    <string name="opening_and_closing_times">Opening and Closing Times:</string>
+    <string name="pharmacy_status">Pharmacy Status:</string>
 </resources>

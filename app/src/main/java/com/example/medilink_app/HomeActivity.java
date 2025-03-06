@@ -84,6 +84,13 @@ public class HomeActivity extends AppCompatActivity {
             drawerLayout.closeDrawer(Gravity.START); // Close Drawer after click
             return true;
         });
+
+        // Initialize ImageView and set OnClickListener
+        ImageView image3 = findViewById(R.id.image_3);
+        image3.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, ScheduleActivity.class);
+            startActivity(intent);
+        });
     }
     private void showModal() {
         // Create Dialog

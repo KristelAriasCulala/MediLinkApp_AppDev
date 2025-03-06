@@ -36,7 +36,9 @@
         <activity android:name=".ActivityProfile"
             android:theme="@style/Theme.MediLink_App.NoActionBar"
             />
-
+        <activity android:name=".ScheduleActivity"
+            android:theme="@style/Theme.MediLink_App.NoActionBar"
+            />
 
     </application>
 
