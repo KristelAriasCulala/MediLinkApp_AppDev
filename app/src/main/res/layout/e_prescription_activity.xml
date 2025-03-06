@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Back Navigation Button -->
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/back_navigation"
+        android:padding="8dp"
+        app:tint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp" />
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/e_prescription"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@color/accent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Patient Details -->
+    <EditText
+        android:id="@+id/et_patient_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/patient_name"
+        android:inputType="textPersonName"
+        android:backgroundTint="@color/highlight"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:padding="8dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/et_patient_age"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/patient_age"
+        android:inputType="number"
+        android:backgroundTint="@color/highlight"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:padding="8dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/et_patient_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Doctor Details -->
+    <EditText
+        android:id="@+id/et_doctor_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/doctor_name"
+        android:inputType="textPersonName"
+        android:backgroundTint="@color/highlight"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:padding="8dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/et_patient_age"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Prescribed Medicines -->
+    <EditText
+        android:id="@+id/et_medicines"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/prescribed_medicines"
+        android:inputType="textMultiLine"
+        android:backgroundTint="@color/highlight"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:padding="8dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/et_doctor_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/save_prescription"
+        android:backgroundTint="@color/success"
+        android:textColor="@color/white"
+        android:padding="12dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/et_medicines"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_print" />
+
+    <!-- Print Button -->
+    <Button
+        android:id="@+id/btn_print"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/print"
+        android:backgroundTint="@color/highlight"
+        android:textColor="@color/white"
+        android:padding="12dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/et_medicines"
+        app:layout_constraintStart_toEndOf="@id/btn_save"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
