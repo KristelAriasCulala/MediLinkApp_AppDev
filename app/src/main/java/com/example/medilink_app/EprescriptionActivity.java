@@ -1,5 +1,7 @@
 package com.example.medilink_app;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,6 +38,10 @@ public class EprescriptionActivity extends AppCompatActivity {
             }
         });
 
+        btnSave.getBackground().setTintList(null); // Remove any applied tint
+        btnSave.setBackgroundTintList(ColorStateList.valueOf(Color.BLACK));
+
+        btnSave.setBackgroundResource(R.drawable.rounded_button_black);
         // Save Prescription Button
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +59,10 @@ public class EprescriptionActivity extends AppCompatActivity {
                 }
             }
         });
+        btnPrint.getBackground().setTintList(null); // Remove any applied tint
+        btnPrint.setBackgroundTintList(ColorStateList.valueOf(Color.BLACK));
 
+        btnPrint.setBackgroundResource(R.drawable.rounded_button_black);
         // Print Button
         btnPrint.setOnClickListener(new View.OnClickListener() {
             @Override
