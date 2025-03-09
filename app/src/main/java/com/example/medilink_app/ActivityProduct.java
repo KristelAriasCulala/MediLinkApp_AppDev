@@ -76,6 +76,7 @@ public class ActivityProduct extends AppCompatActivity {
         Button btnDecrease = dialogView.findViewById(R.id.btn_decrease);
         Button btnIncrease = dialogView.findViewById(R.id.btn_increase);
         ImageView closeButton = dialogView.findViewById(R.id.btn_close);
+        Button btnAddToCart = dialogView.findViewById(R.id.btn_add_to_cart); // Add reference to button
 
         productImage.setImageResource(imageResId);
         productName.setText(name);
@@ -99,5 +100,15 @@ public class ActivityProduct extends AppCompatActivity {
         });
 
         closeButton.setOnClickListener(v -> dialog.dismiss());
+
+        // Add to Cart button click listener
+        btnAddToCart.setOnClickListener(v -> {
+            Intent intent = new Intent(dialogView.getContext(), ActivityCart.class);
+            intent.putExtra("product_name", name);
+            intent.putExtra("product_price", unitPrice);
+            intent.putExtra("quantity", Integer.parseInt(txtQuantity.getText().toString()));
+            dialogView.getContext().startActivity(intent);
+        });
     }
+
 }

@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
-    private static final String DEFAULT_USERNAME = "user@gmail.com";
+    private static final String DEFAULT_USERNAME = "admin@gmail.com";
     private static final String DEFAULT_PASSWORD = "123";
 
     @Override

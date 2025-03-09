@@ -19,7 +19,7 @@
 
     <!-- Second Column: Name and Role -->
     <LinearLayout
-        android:layout_width="178dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:text="Luis Gabrielle Estacio"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:textStyle="italic" />
 
         <TextView
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:text="Admin"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

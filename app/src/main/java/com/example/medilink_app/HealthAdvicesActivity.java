@@ -1,6 +1,8 @@
 package com.example.medilink_app;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,10 +12,16 @@ public class HealthAdvicesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.health_advices_activity);
 
         // Share Tip 1
         Button btnShareTip1 = findViewById(R.id.btn_share_tip_1);
+        btnShareTip1.getBackground().setTintList(null); // Remove any applied tint
+        btnShareTip1.setBackgroundTintList(ColorStateList.valueOf(Color.BLACK));
+
+        btnShareTip1.setBackgroundResource(R.drawable.rounded_button_black);
+
         btnShareTip1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -23,6 +31,10 @@ public class HealthAdvicesActivity extends AppCompatActivity {
 
         // Share Tip 2
         Button btnShareTip2 = findViewById(R.id.btn_share_tip_2);
+        btnShareTip2.getBackground().setTintList(null); // Remove any applied tint
+        btnShareTip2.setBackgroundTintList(ColorStateList.valueOf(Color.BLACK));
+
+        btnShareTip2.setBackgroundResource(R.drawable.rounded_button_black);
         btnShareTip2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,6 +44,10 @@ public class HealthAdvicesActivity extends AppCompatActivity {
 
         // Share Tip 3
         Button btnShareTip3 = findViewById(R.id.btn_share_tip_3);
+        btnShareTip3.getBackground().setTintList(null); // Remove any applied tint
+        btnShareTip3.setBackgroundTintList(ColorStateList.valueOf(Color.BLACK));
+
+        btnShareTip3.setBackgroundResource(R.drawable.rounded_button_black);
         btnShareTip3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

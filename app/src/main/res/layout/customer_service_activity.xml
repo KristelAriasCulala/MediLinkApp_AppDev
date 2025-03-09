@@ -21,7 +21,7 @@
             android:textStyle="bold"
             android:gravity="center"
             android:padding="16dp"
-            android:background="@color/blue"
+            android:background="@drawable/bg_gradient_blue"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />

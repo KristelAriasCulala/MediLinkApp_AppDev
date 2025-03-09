@@ -35,7 +35,7 @@
             android:textStyle="bold"
             android:gravity="center"
             android:padding="16dp"
-            android:background="@color/accent"
+            android:background="@drawable/bg_gradient_blue"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -108,7 +108,7 @@
             android:id="@+id/btn_save"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/save_prescription"
+            android:text="Save"
             android:backgroundTint="@color/success"
             android:textColor="@color/white"
             android:padding="12dp"
