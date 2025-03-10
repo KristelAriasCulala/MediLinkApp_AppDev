@@ -80,10 +80,13 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, ActivityProfile.class));
             } else if (id == R.id.nav_product) {
                 startActivity(new Intent(HomeActivity.this, ActivityProduct.class));
+            }  else if (id == R.id.nav_order) {
+                startActivity(new Intent(HomeActivity.this, OrderActivity.class));
             }
             drawerLayout.closeDrawer(Gravity.START); // Close Drawer after click
             return true;
         });
+
 
         // Initialize ImageView and set OnClickListener
         ImageView image3 = findViewById(R.id.image_3);

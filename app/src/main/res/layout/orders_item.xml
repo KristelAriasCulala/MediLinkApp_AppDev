@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Order ID -->
+        <TextView
+            android:id="@+id/tv_order_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order ID: #12345"
+            android:textSize="16sp"
+            android:textColor="@color/primary"
+            android:textStyle="bold" />
+
+        <!-- Order Date -->
+        <TextView
+            android:id="@+id/tv_order_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date: 2023-10-01"
+            android:textSize="14sp"
+            android:textColor="@color/secondary"
+            android:paddingTop="4dp" />
+
+        <!-- Order Status -->
+        <TextView
+            android:id="@+id/tv_order_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status: Delivered"
+            android:textSize="14sp"
+            android:textColor="@color/success"
+            android:paddingTop="4dp" />
+
+        <!-- Total Amount -->
+        <TextView
+            android:id="@+id/tv_total_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total: $50.00"
+            android:textSize="16sp"
+            android:textColor="@color/highlight"
+            android:textStyle="bold"
+            android:paddingTop="8dp" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:paddingTop="8dp">
+
+            <Button
+                android:id="@+id/btn_view_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Details"
+                android:background="@drawable/button_background"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btn_cancel_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:background="@drawable/button_background"
+                android:textColor="@color/white"
+                android:padding="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
