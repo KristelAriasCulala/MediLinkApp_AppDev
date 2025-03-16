@@ -39,5 +39,5 @@ dependencies {
     androidTestImplementation libs.espresso.core
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'com.github.PhilJay:MPAndroidChart:3.1.0'
-
+    implementation'com.android.volley:volley-cronet:1.2.1'
 }
