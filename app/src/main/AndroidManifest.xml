@@ -60,6 +60,8 @@
         <activity android:name=".OrderActivity"
             android:theme="@style/Theme.MediLink_App.NoActionBar"
             />
+        <activity android:name=".ActivityInventory"
+            android:theme="@style/Theme.MediLink_App.NoActionBar" />
 
 
     </application>

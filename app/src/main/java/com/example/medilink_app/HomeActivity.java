@@ -82,6 +82,8 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, ActivityProduct.class));
             }  else if (id == R.id.nav_order) {
                 startActivity(new Intent(HomeActivity.this, OrderActivity.class));
+            } else if (id == R.id.nav_inventory) {
+                startActivity(new Intent(HomeActivity.this, ActivityInventory.class));
             }
             drawerLayout.closeDrawer(Gravity.START); // Close Drawer after click
             return true;
