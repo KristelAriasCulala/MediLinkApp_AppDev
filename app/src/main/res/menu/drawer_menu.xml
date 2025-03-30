@@ -17,6 +17,11 @@
         android:title="Product" />
 
     <item
+        android:id="@+id/nav_inventory"
+        android:icon="@drawable/ic_inventory"
+        android:title="Inventory" />
+
+    <item
         android:id="@+id/nav_card"
         android:icon="@drawable/shopping_icon"
         android:title="Cart" />
@@ -31,5 +36,9 @@
         android:icon="@drawable/setting_bulb"
         android:title="Settings" />
 
+    <!-- res/menu/navigation_menu.xml -->
+    <item
+        android:id="@+id/nav_account_management"
+        android:title="Account Management" />
 
 </menu>
