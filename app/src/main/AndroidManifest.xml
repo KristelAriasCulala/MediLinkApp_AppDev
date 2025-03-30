@@ -63,6 +63,9 @@
         <activity android:name=".ActivityInventory"
             android:theme="@style/Theme.MediLink_App.NoActionBar" />
 
+        <activity android:name=".Account_management"
+            android:theme="@style/Theme.MediLink_App.NoActionBar" />
+
 
     </application>
 

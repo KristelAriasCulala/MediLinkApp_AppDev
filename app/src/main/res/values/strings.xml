@@ -29,4 +29,12 @@
     <string name="tip_3_limit_unhealthy_foods_and_eat_healthy_meals">Tip 3: Limit Unhealthy Foods and Eat Healthy Meals</string>
     <string name="do_not_forget_to_eat_breakfast_and_choose_a_nutritious_meal_with_more_protein_and_fiber_and_less_fat_sugar_and_calories">Do not forget to eat breakfast and choose a nutritious meal with more protein and fiber and less fat, sugar, and calories</string>
     <string name="health_care_tips">Health Care Tips</string>
+    <string name="user_management">user_management</string>
+    <string name="add_user">add_user</string>
+    <string name="edit_user">edit_user</string>
+    <string name="delete_user">delete_user</string>
+    <string name="add_user_desc">add_user_desc</string>
+    <string name="username">Username</string>
+    <string name="app_logo_desc">app_logo_desc</string>
+    <string name="user_list_desc">user_list_desc</string>
 </resources>
