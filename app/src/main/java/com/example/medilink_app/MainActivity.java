@@ -83,8 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void checkDatabaseConnection() {
-//       String url = "https://172.16.97.165/android_api/connect.php";
-        String url = "http://192.168.137.1/crud/db_config.php";
+       String url = "https://172.16.71.225/android_api/connect.php";
+//        String url = "https://192.168.8.41/android_api/connect.php";
 
         // Bypass SSL certificate validation
         try {

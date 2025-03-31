@@ -135,6 +135,7 @@
         android:layout_height="0dp"
         android:layout_margin="16dp"
         android:contentDescription="@string/user_list_desc"
+        android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@id/userManagementCard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -142,6 +143,7 @@
 
         <LinearLayout
             android:id="@+id/userListContainer"
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
