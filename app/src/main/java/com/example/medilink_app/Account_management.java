@@ -28,7 +28,7 @@ public class Account_management extends AppCompatActivity {
     private String selectedUserId = null;
 
     // Use your computer's IP address or 10.0.2.2 for emulator
-    private static final String BASE_URL = "http://192.168.8.41/crud/";
+    private static final String BASE_URL = "http://192.168.137.1/crud/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

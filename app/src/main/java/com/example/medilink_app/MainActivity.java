@@ -8,6 +8,7 @@ import android.util.TypedValue;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkDatabaseConnection() {
 //       String url = "https://172.16.97.165/android_api/connect.php";
-        String url = "https://192.168.8.41/android_api/connect.php";
+        String url = "http://192.168.137.1/crud/db_config.php";
 
         // Bypass SSL certificate validation
         try {
@@ -125,6 +126,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
+                            // Log the response for debugging
+                            Log.d("DatabaseResponse", response);
+
                             JSONObject jsonObject = new JSONObject(response);
                             String status = jsonObject.getString("status");
                             String message = jsonObject.getString("message");
