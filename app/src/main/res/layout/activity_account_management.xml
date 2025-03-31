@@ -65,6 +65,36 @@
                 android:textStyle="bold"
                 android:textColor="@color/black" />
 
+            <!-- Name Input -->
+            <EditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/your_name"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
+            <!-- Email Input -->
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/your_email"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp" />
+
+            <!-- Password Input -->
+            <EditText
+                android:id="@+id/editPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:minHeight="48dp" />
+
             <Button
                 android:id="@+id/addUserButton"
                 android:layout_width="match_parent"
@@ -101,7 +131,7 @@
         android:layout_margin="16dp"
         android:contentDescription="@string/user_list_desc"
         app:layout_constraintTop_toBottomOf="@id/userManagementCard"
-        app:layout_constraintBottom_toTopOf="@id/fabAddUser"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -110,8 +140,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <!-- User items will be added here programmatically -->
         </LinearLayout>
     </ScrollView>
+
+    <!-- Add the TextView here -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Data"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/userManagementCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
     <!-- Floating Action Button -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton

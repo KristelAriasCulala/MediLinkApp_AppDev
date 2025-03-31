@@ -1,17 +1,16 @@
 <?php
-require 'db_config.php'; // Include the database configuration file
+require 'db_config.php';
 
-$sql = "SELECT * FROM users"; 
+$sql = "SELECT id, name, email FROM users";
+$result = $conn->query($sql);
 
-if($result->num_rows>0){
-    $user = array();
-    while($row = $result->fetch_assoc()){
-        $user[] = $row;
+$users = [];
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $users[] = $row;
     }
-    echo json_encode($user); // Convert the array to JSON format and output it
-} else {
-    echo json_encode([]); // If no records found, return an empty JSON array
 }
 
-$conn->close(); // Close the database connection
+echo json_encode($users);
+$conn->close();
 ?>
