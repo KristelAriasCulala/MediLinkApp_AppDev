@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
-        android:background="@color/primary"
+        android:background="@drawable/bg_gradient_blue"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -54,7 +54,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@color/white"
             android:padding="16dp">
+
 
             <TextView
                 android:id="@+id/cardTitle"
@@ -68,6 +70,7 @@
             <!-- Name Input -->
             <EditText
                 android:id="@+id/editName"
+                style="@style/CustomEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -82,6 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:hint="@string/your_email"
+                style="@style/CustomEditText"
                 android:inputType="textEmailAddress"
                 android:minHeight="48dp" />
 
@@ -92,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:hint="Password"
+                style="@style/CustomEditText"
                 android:inputType="textPassword"
                 android:minHeight="48dp" />
 
@@ -130,6 +135,7 @@
         android:layout_height="0dp"
         android:layout_margin="16dp"
         android:contentDescription="@string/user_list_desc"
+        android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@id/userManagementCard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -137,6 +143,7 @@
 
         <LinearLayout
             android:id="@+id/userListContainer"
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -165,7 +172,7 @@
         android:layout_margin="16dp"
         android:src="@drawable/ic_add"
         android:contentDescription="@string/add_user_desc"
-        android:backgroundTint="@color/primary"
+        android:background="@drawable/bg_gradient_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

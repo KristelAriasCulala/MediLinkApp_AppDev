@@ -19,6 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
+import androidx.appcompat.app.AlertDialog;
 
 public class Account_management extends AppCompatActivity {
     private LinearLayout userListContainer;
@@ -28,7 +29,9 @@ public class Account_management extends AppCompatActivity {
     private String selectedUserId = null;
 
     // Use your computer's IP address or 10.0.2.2 for emulator
-    private static final String BASE_URL = "http://192.168.8.41/crud/";
+//    private static final String BASE_URL = "http://192.168.8.41/crud/";
+    private static final String BASE_URL = "http://172.16.71.225/crud/";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,13 +158,31 @@ public class Account_management extends AppCompatActivity {
             editPassword.setText(""); // Clear password field for security
         });
 
-        // Set click listener for delete button
+        // Set click listener for delete button with confirmation dialog
         deleteButton.setOnClickListener(v -> {
             selectedUserId = id;
-            deleteUser();
+            showDeleteConfirmationDialog(id);
         });
 
         userListContainer.addView(userCard);
+    }
+
+    private void showDeleteConfirmationDialog(String userId) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Confirm Delete");
+        builder.setMessage("Are you sure you want to delete this user?");
+
+        builder.setPositiveButton("Yes", (dialog, which) -> {
+            selectedUserId = userId;
+            deleteUser();
+        });
+
+        builder.setNegativeButton("No", (dialog, which) -> {
+            dialog.dismiss();
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private void updateUser() {
