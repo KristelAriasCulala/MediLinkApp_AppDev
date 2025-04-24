@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
@@ -28,9 +29,7 @@ public class Account_management extends AppCompatActivity {
     private RequestQueue requestQueue;
     private String selectedUserId = null;
 
-    // Use your computer's IP address or 10.0.2.2 for emulator
-//    private static final String BASE_URL = "http://192.168.8.41/crud/";
-    private static final String BASE_URL = "http://172.16.71.225/crud/";
+    private static final String BASE_URL = "http://192.168.183.212/crud/";
 
 
 
@@ -57,7 +56,29 @@ public class Account_management extends AppCompatActivity {
         // Handle button clicks
         addUserButton.setOnClickListener(v -> createUser());
         editUserButton.setOnClickListener(v -> updateUser());
-        deleteUserButton.setOnClickListener(v -> deleteUser());
+        deleteUserButton.setOnClickListener(v -> {
+            if (selectedUserId == null) {
+                Toast.makeText(this, "Please select a user to delete", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Show confirmation dialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Confirm Delete");
+            builder.setMessage("Are you sure you want to delete this user?");
+
+            builder.setPositiveButton("Yes", (dialog, which) -> {
+                // Call the delete function
+                deleteUser();
+            });
+
+            builder.setNegativeButton("No", (dialog, which) -> {
+                dialog.dismiss();
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        });
 
         // Floating Action Button - clears form
         findViewById(R.id.fabAddUser).setOnClickListener(v -> {
@@ -118,25 +139,55 @@ public class Account_management extends AppCompatActivity {
     private void loadUsers() {
         userListContainer.removeAllViews();
 
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, BASE_URL + "fetch.php", null,
-                response -> {
-                    try {
-                        for (int i = 0; i < response.length(); i++) {
-                            JSONObject user = response.getJSONObject(i);
-                            addUserToView(
-                                    user.getString("id"),
-                                    user.getString("name"),
-                                    user.getString("email")
-                            );
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Toast.makeText(this, "Error parsing user data", Toast.LENGTH_SHORT).show();
-                    }
-                },
-                error -> Toast.makeText(this, "Error loading users: " + error.getMessage(), Toast.LENGTH_SHORT).show());
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("action", "read");
 
-        requestQueue.add(request);
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, BASE_URL + "fetch.php", jsonObject,
+                    response -> {
+                        try {
+                            String status = response.getString("status");
+                            String message = response.getString("message");
+
+                            if (status.equals("success")) {
+                                JSONArray usersArray = response.getJSONArray("users");
+                                for (int i = 0; i < usersArray.length(); i++) {
+                                    JSONObject user = usersArray.getJSONObject(i);
+                                    addUserToView(
+                                            user.getString("id"),
+                                            user.getString("name"),
+                                            user.getString("email")
+                                    );
+                                }
+
+                                if (usersArray.length() == 0) {
+                                    Toast.makeText(this, "No users found", Toast.LENGTH_SHORT).show();
+                                }
+                            } else {
+                                Toast.makeText(this, "Error: " + message, Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(this, "Error parsing user data", Toast.LENGTH_SHORT).show();
+                        }
+                    },
+                    error -> {
+                        Toast.makeText(this, "Error loading users: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                        error.printStackTrace();
+                    }) {
+                @Override
+                public Map<String, String> getHeaders() {
+                    Map<String, String> headers = new HashMap<>();
+                    headers.put("Content-Type", "application/json");
+                    return headers;
+                }
+            };
+
+            requestQueue.add(request);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Error creating request", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void addUserToView(String id, String name, String email) {
@@ -161,13 +212,36 @@ public class Account_management extends AppCompatActivity {
 
         // Set click listener for delete button with confirmation dialog
         deleteButton.setOnClickListener(v -> {
-            selectedUserId = id;
-            showDeleteConfirmationDialog(id);
+            showHideConfirmationDialog(userCard);
         });
 
         userListContainer.addView(userCard);
     }
+    private void showHideConfirmationDialog(View userCard) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Hide User");
+        builder.setMessage("delete this user from the app? (The data will remain in the database)");
 
+        builder.setPositiveButton("Yes", (dialog, which) -> {
+            // Remove only from UI without database deletion
+            userListContainer.removeView(userCard);
+
+            // Clear form if the hidden user was selected
+            if (userCard.isSelected()) {
+                clearForm();
+                selectedUserId = null;
+            }
+
+            Toast.makeText(this, "User deleted in the app", Toast.LENGTH_SHORT).show();
+        });
+
+        builder.setNegativeButton("No", (dialog, which) -> {
+            dialog.dismiss();
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
     private void showDeleteConfirmationDialog(String userId) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Confirm Delete");

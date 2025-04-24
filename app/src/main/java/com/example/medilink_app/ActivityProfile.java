@@ -43,7 +43,7 @@ public class ActivityProfile extends AppCompatActivity {
                 startActivity(new Intent(ActivityProfile.this, HomeActivity.class));
             } else if (id == R.id.nav_profile) {
                 startActivity(new Intent(ActivityProfile.this, ActivityProfile.class));
-            } else if (id == R.id.nav_product) {
+            } else if (id == R.id.nav_order) {
                 startActivity(new Intent(ActivityProfile.this, ActivityProduct.class));
             }
             drawerLayout.closeDrawer(Gravity.START); // Close drawer after click

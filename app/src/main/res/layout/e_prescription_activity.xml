@@ -115,20 +115,8 @@
             android:layout_margin="16dp"
             app:layout_constraintTop_toBottomOf="@id/et_medicines"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_print" />
+         />
 
-        <!-- Print Button -->
-        <Button
-            android:id="@+id/btn_print"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/print"
-            android:backgroundTint="@color/highlight"
-            android:textColor="@color/white"
-            android:padding="12dp"
-            android:layout_margin="16dp"
-            app:layout_constraintTop_toBottomOf="@id/et_medicines"
-            app:layout_constraintStart_toEndOf="@id/btn_save"
-            app:layout_constraintEnd_toEndOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

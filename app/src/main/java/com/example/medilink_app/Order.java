@@ -1,31 +1,31 @@
 package com.example.medilink_app;
 
 public class Order {
-    private String orderId;
-    private String date;
-    private String status;
-    private String totalAmount;
+    private int orderId;
+    private String orderDate;
+    private double totalAmount;
+    private String orderStatus;
 
-    public Order(String orderId, String date, String status, String totalAmount) {
+    public Order(int orderId, String orderDate, double totalAmount, String orderStatus) {
         this.orderId = orderId;
-        this.date = date;
-        this.status = status;
+        this.orderDate = orderDate;
         this.totalAmount = totalAmount;
+        this.orderStatus = orderStatus;
     }
 
-    public String getOrderId() {
+    public int getOrderId() {
         return orderId;
     }
 
-    public String getDate() {
-        return date;
+    public String getOrderDate() {
+        return orderDate;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public String getTotalAmount() {
+    public double getTotalAmount() {
         return totalAmount;
+    }
+
+    public String getOrderStatus() {
+        return orderStatus;
     }
 }

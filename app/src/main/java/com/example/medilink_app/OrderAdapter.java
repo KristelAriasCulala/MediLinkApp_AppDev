@@ -27,8 +27,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Order order = orderList.get(position);
         holder.tvOrderId.setText("Order ID: #" + order.getOrderId());
-        holder.tvOrderDate.setText("Date: " + order.getDate());
-        holder.tvOrderStatus.setText("Status: " + order.getStatus());
+        holder.tvOrderDate.setText("Date: " + order.getOrderDate());
+        holder.tvOrderStatus.setText("Status: " + order.getOrderStatus()); // Fixed method
         holder.tvTotalAmount.setText("Total: " + order.getTotalAmount());
 
         // Handle button clicks

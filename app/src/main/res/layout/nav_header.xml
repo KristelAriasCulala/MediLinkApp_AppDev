@@ -27,16 +27,16 @@
             android:id="@+id/nav_user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Luis Gabrielle Estacio"
+            android:text="Loading..."
             android:textColor="@android:color/black"
             android:textSize="17sp"
             android:textStyle="italic" />
 
         <TextView
-            android:id="@+id/role"
+            android:id="@+id/nav_user_role"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Admin"
+            android:text="Loading..."
             android:textColor="@android:color/black"
             android:textSize="15sp"
             android:textStyle="bold" />

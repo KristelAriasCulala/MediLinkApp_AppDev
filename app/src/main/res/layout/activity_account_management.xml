@@ -13,163 +13,182 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp"
+        android:padding="@dimen/padding_medium"
         android:background="@drawable/bg_gradient_blue"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
-            android:id="@+id/appLogo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/logo"
-            android:contentDescription="@string/app_logo_desc" />
 
         <TextView
             android:id="@+id/appTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/app_name"
-            android:textSize="24sp"
+            android:textSize="@dimen/text_large"
             android:textColor="@color/white"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="16dp"
-            android:fontFamily="@font/poppins_regular" />
+            android:layout_marginStart="@dimen/margin_medium"
+            android:fontFamily="@font/poppins_regular"
+            android:ellipsize="end"
+            android:maxLines="1" />
     </LinearLayout>
 
-    <!-- User Management Options Card -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/userManagementCard"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="8dp"
-        app:layout_constraintTop_toBottomOf="@id/headerLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/white"
-            android:padding="16dp">
-
-
-            <TextView
-                android:id="@+id/cardTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/user_management"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black" />
-
-            <!-- Name Input -->
-            <EditText
-                android:id="@+id/editName"
-                style="@style/CustomEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:hint="@string/your_name"
-                android:inputType="textPersonName"
-                android:minHeight="48dp" />
-
-            <!-- Email Input -->
-            <EditText
-                android:id="@+id/editEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:hint="@string/your_email"
-                style="@style/CustomEditText"
-                android:inputType="textEmailAddress"
-                android:minHeight="48dp" />
-
-            <!-- Password Input -->
-            <EditText
-                android:id="@+id/editPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:hint="Password"
-                style="@style/CustomEditText"
-                android:inputType="textPassword"
-                android:minHeight="48dp" />
-
-            <Button
-                android:id="@+id/addUserButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/add_user"
-                android:backgroundTint="@color/accent"
-                android:textColor="@color/white" />
-
-            <Button
-                android:id="@+id/editUserButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/edit_user"
-                android:backgroundTint="@color/blue"
-                android:textColor="@color/white" />
-
-            <Button
-                android:id="@+id/deleteUserButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/delete_user"
-                android:backgroundTint="@color/design_default_color_error"
-                android:textColor="@color/white" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- ScrollView for User List -->
-    <ScrollView
+    <!-- Content ScrollView to ensure all content is accessible on small screens -->
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="16dp"
-        android:contentDescription="@string/user_list_desc"
-        android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/userManagementCard"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout
-            android:id="@+id/userListContainer"
-            android:background="@color/white"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- User items will be added here programmatically -->
-        </LinearLayout>
-    </ScrollView>
+            android:layout_height="wrap_content">
 
-    <!-- Add the TextView here -->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User Data"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/userManagementCard"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+            <!-- User Management Options Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/userManagementCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="@dimen/padding_medium">
+
+                    <TextView
+                        android:id="@+id/cardTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_management"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold"
+                        android:textColor="@color/black" />
+
+                    <!-- Name Input -->
+                    <EditText
+                        android:id="@+id/editName"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:hint="@string/your_name"
+                        android:inputType="textPersonName"
+                        android:minHeight="48dp" />
+
+                    <!-- Email Input -->
+                    <EditText
+                        android:id="@+id/editEmail"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:hint="@string/your_email"
+                        android:inputType="textEmailAddress"
+                        android:minHeight="48dp" />
+
+                    <!-- Password Input -->
+                    <EditText
+                        android:id="@+id/editPassword"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:minHeight="48dp" />
+
+                    <!-- Button container for landscape orientation -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/text_xsmall">
+
+                        <Button
+                            android:id="@+id/addUserButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="4dp"
+                            android:text="@string/add_user"
+                            android:backgroundTint="@color/accent"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/editUserButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:text="@string/edit_user"
+                            android:backgroundTint="@color/blue"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/deleteUserButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="4dp"
+                            android:text="@string/delete_user"
+                            android:backgroundTint="@color/design_default_color_error"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- TextView for information -->
+            <TextView
+                android:id="@+id/textView"
+                android:padding="@dimen/padding_small"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_small"
+                android:textColor="@color/black"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/userManagementCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/margin_small" />
+
+            <!-- User List Container -->
+            <LinearLayout
+                android:id="@+id/userListContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_margin="@dimen/margin_medium"
+                app:layout_constraintTop_toBottomOf="@id/textView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+                <!-- User items will be added here programmatically -->
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <!-- Floating Action Button -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="@dimen/margin_medium"
         android:src="@drawable/ic_add"
         android:contentDescription="@string/add_user_desc"
         android:background="@drawable/bg_gradient_blue"

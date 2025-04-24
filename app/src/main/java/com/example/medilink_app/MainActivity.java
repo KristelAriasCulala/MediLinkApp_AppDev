@@ -83,8 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void checkDatabaseConnection() {
-       String url = "https://172.16.71.225/android_api/connect.php";
-//        String url = "https://192.168.8.41/android_api/connect.php";
+       String url = "http://192.168.0.18/MedilinkX_Web/Config/app_api/connect.php";
+
 
         // Bypass SSL certificate validation
         try {
@@ -127,7 +127,22 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             // Log the response for debugging
-                            Log.d("DatabaseResponse", response);
+                            Log.d("DatabaseResponse", "Length: " + response.length());
+                            Log.d("DatabaseResponse", "Content: " + response);
+
+                            // Check if response is empty or whitespace only
+                            if (response == null || response.trim().isEmpty()) {
+                                connectionStatus.setText("Error: Empty response from server");
+                                Toast.makeText(MainActivity.this, "Server returned empty response", Toast.LENGTH_LONG).show();
+                                return;
+                            }
+
+                            // Check if PHP is being executed properly
+                            if (response.contains("<?php")) {
+                                connectionStatus.setText("Error: Web server not executing PHP");
+                                Toast.makeText(MainActivity.this, "Server configuration error - PHP not executing", Toast.LENGTH_LONG).show();
+                                return;
+                            }
 
                             JSONObject jsonObject = new JSONObject(response);
                             String status = jsonObject.getString("status");
@@ -140,11 +155,10 @@ public class MainActivity extends AppCompatActivity {
                             } else {
                                 Toast.makeText(MainActivity.this, "Database Connection Failed: " + message, Toast.LENGTH_LONG).show();
                             }
-
                         } catch (Exception e) {
                             e.printStackTrace();
-                            connectionStatus.setText("Error: Database Connection in Web service");
-                            Toast.makeText(MainActivity.this, "Database Connection Failed", Toast.LENGTH_LONG).show();
+                            connectionStatus.setText("Error parsing response: " + e.getMessage());
+                            Toast.makeText(MainActivity.this, "Response parsing failed", Toast.LENGTH_LONG).show();
                         }
                     }
                 },

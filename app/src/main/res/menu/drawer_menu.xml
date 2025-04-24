@@ -9,17 +9,8 @@
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/graph_bars_icon"
-        android:title="Statistics" />
+        android:title="Profile" />
 
-    <item
-        android:id="@+id/nav_product"
-        android:icon="@drawable/shopping_icon"
-        android:title="Product" />
-
-    <item
-        android:id="@+id/nav_inventory"
-        android:icon="@drawable/ic_inventory"
-        android:title="Inventory" />
 
     <item
         android:id="@+id/nav_card"
@@ -29,16 +20,13 @@
     <item
         android:id="@+id/nav_order"
         android:icon="@drawable/ic_orders"
-        android:title="Orders" />
+        android:title="E-Prescription" />" />
 
     <item
-        android:id="@+id/nav_settings"
-        android:icon="@drawable/setting_bulb"
-        android:title="Settings" />
+        android:id="@+id/order_history"
+        android:icon="@drawable/shopping_icon"
+        android:title="Order History" />" />
 
-    <!-- res/menu/navigation_menu.xml -->
-    <item
-        android:id="@+id/nav_account_management"
-        android:title="Account Management" />
+
 
 </menu>

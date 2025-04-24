@@ -1,32 +1,27 @@
 package com.example.medilink_app;
-import android.net.Uri;
 
 public class Product {
-    private Uri imageUri;
+    private int productId;
     private String name;
     private String description;
-    private double unitPrice;
+    private int stock;
+    private double price;
+    private String unit;
 
-    public Product(Uri imageUri, String name, String description, double unitPrice) {
-        this.imageUri = imageUri;
+    public Product(int productId, String name, String description, int stock, double price, String unit) {
+        this.productId = productId;
         this.name = name;
         this.description = description;
-        this.unitPrice = unitPrice;
+        this.stock = stock;
+        this.price = price;
+        this.unit = unit;
     }
 
-    public Uri getImageUri() {
-        return imageUri;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public double getUnitPrice() {
-        return unitPrice;
-    }
+    // Getters
+    public int getProductId() { return productId; }
+    public String getName() { return name; }
+    public String getDescription() { return description; }
+    public int getStock() { return stock; }
+    public double getPrice() { return price; }
+    public String getUnit() { return unit; }
 }

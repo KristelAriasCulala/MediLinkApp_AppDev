@@ -24,6 +24,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityInventory extends AppCompatActivity {
+    // First, add this Product class inside ActivityInventory.java before the main class
+// (or create a separate Product.java file)
+    class Product {
+        private Uri imageUri;
+        private String name;
+        private String description;
+        private double unitPrice;
+
+        public Product(Uri imageUri, String name, String description, double unitPrice) {
+            this.imageUri = imageUri;
+            this.name = name;
+            this.description = description;
+            this.unitPrice = unitPrice;
+        }
+
+        public Uri getImageUri() { return imageUri; }
+        public String getName() { return name; }
+        public String getDescription() { return description; }
+        public double getUnitPrice() { return unitPrice; }
+    }
     private static final int PICK_IMAGE_REQUEST = 1;
     private DrawerLayout drawerLayout;
     private ImageView profileImage;
@@ -51,9 +71,9 @@ public class ActivityInventory extends AppCompatActivity {
                 startActivity(new Intent(ActivityInventory.this, HomeActivity.class));
             } else if (id == R.id.nav_profile) {
                 startActivity(new Intent(ActivityInventory.this, ActivityProfile.class));
-            } else if (id == R.id.nav_product) {
+            } else if (id == R.id.nav_card) {
                 startActivity(new Intent(ActivityInventory.this, ActivityProduct.class));
-            } else if (id == R.id.nav_inventory) {
+            } else if (id == R.id.nav_order) {
                 startActivity(new Intent(ActivityInventory.this, ActivityInventory.class));
             }
             drawerLayout.closeDrawer(GravityCompat.START);
@@ -61,8 +81,11 @@ public class ActivityInventory extends AppCompatActivity {
         });
 
         // Initialize product list with two products
-        productList.add(new Product(Uri.parse("android.resource://com.example.medilink_app/" + R.drawable.imageone), "Paracetamol Biogesic", "Description for Paracetamol Biogesic", 50.00));
-        productList.add(new Product(Uri.parse("android.resource://com.example.medilink_app/" + R.drawable.imagetwo), "Phenylephrine HCI", "Description for Phenylephrine HCI", 60.00));
+        // Replace the current initialization with this
+        productList.add(new Product(Uri.parse("android.resource://com.example.medilink_app/" + R.drawable.imageone),
+                "Paracetamol Biogesic", "Description for Paracetamol Biogesic", 50.00));
+        productList.add(new Product(Uri.parse("android.resource://com.example.medilink_app/" + R.drawable.imagetwo),
+                "Phenylephrine HCI", "Description for Phenylephrine HCI", 60.00));
 
         addButton.setOnClickListener(v -> showProductDialog(null, -1));
         updateProductList();
@@ -157,14 +180,18 @@ public class ActivityInventory extends AppCompatActivity {
             final int position = i;
             Product product = productList.get(i);
             View productView = getLayoutInflater().inflate(R.layout.product_item, null);
-            ImageView productImage = productView.findViewById(R.id.product_image);
+            ImageView productImage = productView.findViewById(R.id.product_image_path);
+
+            // Set the product image
+            productImage.setImageURI(product.getImageUri());
+
             TextView productName = productView.findViewById(R.id.product_name);
             TextView productDescription = productView.findViewById(R.id.product_description);
             TextView productPrice = productView.findViewById(R.id.product_price);
             Button editButton = productView.findViewById(R.id.edit_button);
             Button deleteButton = productView.findViewById(R.id.delete_button);
 
-            productImage.setImageURI(product.getImageUri());
+           
             productName.setText(product.getName());
             productDescription.setText(product.getDescription());
             productPrice.setText("₱ " + product.getUnitPrice());
