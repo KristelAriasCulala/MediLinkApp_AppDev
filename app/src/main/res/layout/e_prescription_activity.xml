@@ -13,34 +13,38 @@
         <!-- Back Navigation Button -->
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/ic_arrow_back"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/back_navigation"
-            android:padding="8dp"
+            android:padding="12dp"
+            android:elevation="4dp"
             app:tint="@color/white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="16dp" />
+            android:layout_margin="16dp"
+            android:visibility="visible" />
 
         <!-- Header -->
+
+        <!-- Patient Details -->
         <TextView
             android:id="@+id/tv_header"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/e_prescription"
-            android:textSize="24sp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
+            android:background="@drawable/bg_gradient_blue"
             android:gravity="center"
             android:padding="16dp"
-            android:background="@drawable/bg_gradient_blue"
-            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/e_prescription"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Patient Details -->
         <EditText
             android:id="@+id/et_patient_name"
             android:layout_width="0dp"

@@ -36,7 +36,6 @@
             android:layout_marginTop="4dp"
             android:textColor="@color/black" />
 
-
         <Button
             android:id="@+id/deleteUserButton"
             android:layout_width="wrap_content"
@@ -44,5 +43,15 @@
             android:text="Delete"
             android:backgroundTint="@color/design_default_color_error"
             android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/archiveUserButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Archive"
+            android:backgroundTint="@color/design_default_color_primary_variant"
+            android:textColor="@color/white" />
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>
