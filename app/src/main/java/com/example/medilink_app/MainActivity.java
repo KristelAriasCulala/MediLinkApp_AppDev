@@ -8,6 +8,7 @@ import android.util.TypedValue;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -125,6 +126,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
+                            // Log the response for debugging
+                            Log.d("DatabaseResponse", response);
+
                             JSONObject jsonObject = new JSONObject(response);
                             String status = jsonObject.getString("status");
                             String message = jsonObject.getString("message");
